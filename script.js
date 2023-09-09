@@ -22,34 +22,34 @@ function searchWeather(searchTerm){
     function init(resultFromServer){
         switch (resultFromServer.weather[0].main){
             case 'Clear':
-                document.body.style.backgroundImage = 'url("clear.jpg")'
+                document.body.style.backgroundImage = 'url("photos/clear.jpg")'
 
             break;
 
             case 'Clouds':
-                document.body.style.backgroundImage = 'url("cloudy.jpg")'
+                document.body.style.backgroundImage = 'url("photos/cloudy.jpg")'
 
             break;
 
             case 'Rain':
             case 'Drizzle':
-                document.body.style.backgroundImage = 'url("rain.jpg")'
+                document.body.style.backgroundImage = 'url("photos/rain.jpg")'
         
 
             break;
 
             case 'Thunderstorm':
-                document.body.style.backgroundImage = 'url("storm.jpg")'
+                document.body.style.backgroundImage = 'url("photos/storm.jpg")'
 
             break;
             
             case 'Snow':
-                document.body.style.backgroundImage = 'url("snow.jpg")'
+                document.body.style.backgroundImage = 'url("photos/snow.jpg")'
 
             break;
 
             case 'Mist':
-                document.body.style.backgroundImage = 'url("mist.jpg")'
+                document.body.style.backgroundImage = 'url("photos/mist.jpg")'
 
             break;
 
@@ -64,7 +64,12 @@ function searchWeather(searchTerm){
         let windSpeedElement = document.getElementById('windSpeed');
         let cityHeader = document.getElementById('cityHeader');
         let weatherIcon = document.getElementById('documentIconImg');
-        
+
+        weatherIcon.src = 'https://openweathermap.org/img/wn/' + resultFromServer.weather[0].icon + '.png';
+
+        let resultDescription = resultFromServer.weather[0].description;
+        weatherDescriptionHeader.innerText = resultDescription;
+
 
         
     }
