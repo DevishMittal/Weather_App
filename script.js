@@ -22,34 +22,33 @@ function searchWeather(searchTerm){
     function init(resultFromServer){
         switch (resultFromServer.weather[0].main){
             case 'Clear':
-                document.body.style.backgroundImage = 'url("photos/clear(1).jpg")'
-
-            break;
+                document.body.style.backgroundImage = 'url("clear.jpg")';
+                break;
 
             case 'Clouds':
-                document.body.style.backgroundImage = 'url("photos/cloudy.jpg")'
+                document.body.style.backgroundImage = 'url("cloudy.jpg")';
 
             break;
 
             case 'Rain':
             case 'Drizzle':
-                document.body.style.backgroundImage = 'url("photos/rain.jpg")'
+                document.body.style.backgroundImage = 'url("rain.jpg")';
         
 
             break;
 
             case 'Thunderstorm':
-                document.body.style.backgroundImage = 'url("photos/storm.jpg")'
+                document.body.style.backgroundImage = 'url("storm.jpg")';
 
             break;
             
             case 'Snow':
-                document.body.style.backgroundImage = 'url("photos/snow.jpg")'
+                document.body.style.backgroundImage = 'url("snow.jpg")';
 
             break;
 
             case 'Mist':
-                document.body.style.backgroundImage = 'url("photos/mist.jpg")'
+                document.body.style.backgroundImage = 'url("mist.jpg")';
 
             break;
 
@@ -76,6 +75,7 @@ function searchWeather(searchTerm){
         humidityElement.innerHTML = 'Humidity = ' + resultFromServer.main.humidity + '%';
 
         setPositionForWeatherInfo();
+        console.log(resultFromServer);
         
     }
 

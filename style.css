@@ -1,5 +1,5 @@
 body {
-    background-image: url(photos/default.jpg);
+    background-image: url('default.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -15,12 +15,12 @@ body {
     padding: 50px;
     border-radius: 10px;
     position: absolute;
-   visibility: hidden;
+    visibility: hidden;
 }
 #weatherContainer h1 {
 margin: 5px;
 font-size: 42px;
-font-family:'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+font-family: "Lucida Sans Unicode",  "Lucia Grande", sans-serif;
 
 }
 #searchContainer {
@@ -37,7 +37,7 @@ font-family:'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
     width: 75px;
 }
 .searchControl {
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 5px black;
     border: none;
     border-radius: 5px;
     padding: 5px;
@@ -47,7 +47,7 @@ font-family:'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
     display: block;
     margin-bottom: 20px;
 }
-#weatherMain div{
+#weatherMain div {
     display: inline-block;
 }
 #weatherDescriptionHeader {
