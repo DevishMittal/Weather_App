@@ -22,7 +22,7 @@ function searchWeather(searchTerm){
     function init(resultFromServer){
         switch (resultFromServer.weather[0].main){
             case 'Clear':
-                document.body.style.backgroundImage = 'url("photos/clear.jpg")'
+                document.body.style.backgroundImage = 'url("photos/clear(1).jpg")'
 
             break;
 
@@ -68,11 +68,27 @@ function searchWeather(searchTerm){
         weatherIcon.src = 'https://openweathermap.org/img/wn/' + resultFromServer.weather[0].icon + '.png';
 
         let resultDescription = resultFromServer.weather[0].description;
-        weatherDescriptionHeader.innerText = resultDescription;
+        weatherDescriptionHeader.innerText = resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1);
 
+        temperatureElement.innerHTML = Math.floor(resultFromServer.main.temp) + '&#176';
+        windSpeedElement.innerHTML = 'Wind speed = ' + Math.floor(resultFromServer.wind.speed) + ' m/s';
+        cityHeader.innerHTML = resultFromServer.name;
+        humidityElement.innerHTML = 'Humidity = ' + resultFromServer.main.humidity + '%';
 
+        setPositionForWeatherInfo();
         
     }
+
+    function setPositionForWeatherInfo(){
+        let weatherContainer = document.getElementById('weatherContainer')
+        let weatherContainerHeight = weatherContainer.clientHeight;
+        let weatherContainerWidth = weatherContainer.clientWidth;
+
+        weatherContainer.style.left = `calc(50% - ${weatherContainerWidth/2}px)`;
+        weatherContainer.style.top = `calc(50% - ${weatherContainerWidth/1.3}px)`;
+        weatherContainer.style.visibility = 'visible';
+    }
+
     document.getElementById('searchBtn').addEventListener('click', () => {
         let searchTerm = document.getElementById('searchInput').value;
         if(searchTerm)
