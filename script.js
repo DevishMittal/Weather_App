@@ -20,7 +20,52 @@ function searchWeather(searchTerm){
     })
 }
     function init(resultFromServer){
-        console.log(resultFromServer);
+        switch (resultFromServer.weather[0].main){
+            case 'Clear':
+                document.body.style.backgroundImage = 'url("clear.jpg")'
+
+            break;
+
+            case 'Clouds':
+                document.body.style.backgroundImage = 'url("cloudy.jpg")'
+
+            break;
+
+            case 'Rain':
+            case 'Drizzle':
+                document.body.style.backgroundImage = 'url("rain.jpg")'
+        
+
+            break;
+
+            case 'Thunderstorm':
+                document.body.style.backgroundImage = 'url("storm.jpg")'
+
+            break;
+            
+            case 'Snow':
+                document.body.style.backgroundImage = 'url("snow.jpg")'
+
+            break;
+
+            case 'Mist':
+                document.body.style.backgroundImage = 'url("mist.jpg")'
+
+            break;
+
+            default:
+                break;
+    
+        }
+        
+        let weatherDescriptionHeader = document.getElementById('weatherDescriptionHeader');
+        let temperatureElement = document.getElementById('temperature');
+        let humidityElement = document.getElementById('humidity');
+        let windSpeedElement = document.getElementById('windSpeed');
+        let cityHeader = document.getElementById('cityHeader');
+        let weatherIcon = document.getElementById('documentIconImg');
+        
+
         
     }
     document.getElementById('searchBtn').addEventListener('click', () => {
