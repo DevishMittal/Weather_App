@@ -94,4 +94,3 @@ function searchWeather(searchTerm){
         if(searchTerm)
             searchWeather(searchTerm);
     })
-
