@@ -9,16 +9,44 @@ function getSearchMethod(searchTerm){
         searchMethod = 'q';
 }
 
-function searchWeather(searchTerm){
+function searchWeather(searchTerm) {
     getSearchMethod(searchTerm);
-    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`).then(result => {
-        return result.json();
+    fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
+        .then(result => {
 
-    }).then(result =>  {
-        init(result);
+            if (!result.ok) {
+
+                throw new Error('Error! Please enter a valid city name');
+            
+            }   
+            
+            return result.json();
+            
         
-    })
+        })
+        .then(result => {
+
+            init(result);
+        
+        })
+        .catch(error => {
+            displayError(error.message); 
+          
+        });
+       
+         
 }
+function displayError(errorMessage) {
+    const errorElement = document.getElementById('error');
+    errorElement.textContent = errorMessage;
+    errorElement.style.display = 'block';
+    setTimeout(() => {
+        errorElement.style.display = 'none';
+
+    },3000) 
+}
+
+
     function init(resultFromServer){
         switch (resultFromServer.weather[0].main){
             case "Clear":
@@ -94,3 +122,48 @@ function searchWeather(searchTerm){
         if(searchTerm)
             searchWeather(searchTerm);
     })
+
+document.getElementById('searchBtn').addEventListener('click', () => {
+    let searchTerm = document.getElementById('searchInput').value;
+    if (searchTerm) {
+        hideMainText();
+        searchWeather(searchTerm);
+    }
+});
+
+function hideMainText() {
+    const mainText = document.getElementById('mainText');
+    mainText.style.display = 'none';
+}
+
+document.getElementById('celsiusBtn').addEventListener('click', () => {
+    units = 'metric'; 
+    updateTemperatureDisplay();
+});
+
+document.getElementById('fahrenheitBtn').addEventListener('click', () => {
+    units = 'imperial'; 
+    updateTemperatureDisplay();
+});
+
+function updateTemperatureDisplay() {
+    if (resultFromServer) {
+        if (units === 'metric') {
+            temperatureElement.innerHTML = Math.floor(resultFromServer.main.temp) + '&#176;C';
+       
+       
+        } else if (units === 'imperial') {
+            
+            
+            const fahrenheitTemp = Math.floor((resultFromServer.main.temp * 9/5) + 32);
+            temperatureElement.innerHTML = fahrenheitTemp + '&#176;F';
+            
+        }
+    }
+
+}
+
+updateTemperatureDisplay();
+
+
+    

@@ -11,23 +11,30 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <div id="temperatureToggle">
+            <button id="celsiusBtn" class="temperatureToggleBtn">Celsius</button>
+            <button id="fahrenheitBtn" class="temperatureToggleBtn">Fahrenheit</button>
+        </div>
+        <div id="error" class="error-message"></div>
+        <div id="mainText" ><h1>Weather Forecast</h1> </div>
         <div id="searchContainer"> 
             <input class="searchControl"  type="text" placeholder="Enter City Name or Pin-Code" id = "searchInput">
             <button class="searchControl" id = "searchBtn">search</button> 
         </div>
         <div id="weatherContainer">
             <div id="weatherDescription">
-            <h1 id="cityHeader"> </h1>                <!--Contains name of city-->
+            <h1 id="cityHeader"> </h1>                
             <div id="weatherMain"> 
                 <div id="temperature"></div>
                 <div id="weatherDescriptionHeader"></div>
                 <div><img id = "documentIconImg"></div>
-            </div>         <!--Contains all weather info)--> 
+            </div>         
             <hr>
             <div id="windSpeed" class="bottomDetails"></div>
             <div id="humidity" class="bottomDetails"></div>
         </div>
     </div>
         <script src="script.js"></script>
+        
     </body>
 </html>

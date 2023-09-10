@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    color: white;
+    color: rgb(255, 253, 254);
     text-shadow: 2px 2px 1px black;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 
@@ -18,28 +18,37 @@ body {
     visibility: hidden;
 }
 #weatherContainer h1 {
-margin: 5px;
-font-size: 42px;
+margin: 50px;
+font-size: 80px;
 font-family: "Lucida Sans Unicode",  "Lucia Grande", sans-serif;
-
+text-shadow: 5px 5px 5px black;
 }
 #searchContainer {
     padding: 15px;
     position: absolute;
     top: 0;
     right: 0;
+    
 }
+#searchBtn:hover {
+    background-color: rgb(241, 146, 218); /* Change the color to your desired hover color */
+}
+
 #searchContainer input {
-    width: 200px;
+    width: 350px;
+    height: 40px;
+    font-size: 25px;
 }
 #searchContainer button {
-    background-color: rgb(1, 159, 198);
-    width: 75px;
+    background-color: rgb(91, 193, 219);
+    width: 100px;
+    height: 45px;
+    font-size: 25px;
 }
 .searchControl {
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 8px 8px 10px black;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px;
 
 }
@@ -51,19 +60,63 @@ font-family: "Lucida Sans Unicode",  "Lucia Grande", sans-serif;
     display: inline-block;
 }
 #weatherDescriptionHeader {
-    font-size: 28px;
-    vertical-align: 50%;
+    font-size: 50px;
+    vertical-align: top;
+    text-shadow: 4px 4px 4px black;
 }
 #temperature {
-    font-size: 38px;
+    font-size: 45px;
     vertical-align: 25%;
+    text-shadow: 4px 5px 4px black;
 }
 .bottomDetails {
     display: block;
-    font-size: 24px;
+    font-size: 40px;
     text-align: right;
+    text-shadow: 4px 4px 5px black;
     
 }
 hr {
     margin-bottom: 20px;
 }
+#mainText {
+    text-align: center;
+    margin-top: 300px;
+    padding: 200px;
+    border-radius: 20px;
+}
+
+#mainText h1 {
+    font-size: 150px;
+    color: #f764c4;
+    text-shadow: 4px 4px 5px #000000;
+}
+.temperatureToggleBtn {
+    background-color: #0099ff;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.temperatureToggleBtn:hover {
+    background-color: #58bcff;
+}
+
+#temperatureToggle {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.error-message {
+    color: rgb(255, 0, 0);
+    font-size: 55px;
+    margin-top: 50px;
+    display: none;
+    text-align: right;
+}
+
