@@ -12,14 +12,14 @@ body {
 #weatherContainer{
     background-color: rgba(0, 0, 0, 0.25);
     box-shadow: 1px 1px 5px black;
-    padding: 50px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 5px;
     position: absolute;
     visibility: hidden;
 }
 #weatherContainer h1 {
-margin: 50px;
-font-size: 80px;
+margin: 10px;
+font-size: 60px;
 font-family: "Lucida Sans Unicode",  "Lucia Grande", sans-serif;
 text-shadow: 5px 5px 5px black;
 }
@@ -31,7 +31,7 @@ text-shadow: 5px 5px 5px black;
     
 }
 #searchBtn:hover {
-    background-color: rgb(241, 146, 218); /* Change the color to your desired hover color */
+    background-color: rgb(241, 146, 218); 
 }
 
 #searchContainer input {
@@ -60,12 +60,12 @@ text-shadow: 5px 5px 5px black;
     display: inline-block;
 }
 #weatherDescriptionHeader {
-    font-size: 50px;
+    font-size: 45px;
     vertical-align: top;
     text-shadow: 4px 4px 4px black;
 }
 #temperature {
-    font-size: 45px;
+    font-size: 40px;
     vertical-align: 25%;
     text-shadow: 4px 5px 4px black;
 }
